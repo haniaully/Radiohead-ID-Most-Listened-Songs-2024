@@ -133,7 +133,7 @@
 2. import the CSV file:
      - go to File > Open and select the radiohead_tracks_indonesia.csv file.
 
-## Recommendations
+## recommendations
 
 for those looking to explore Radiohead's music further, here are some other great songs by the band:
 
@@ -142,7 +142,7 @@ for those looking to explore Radiohead's music further, here are some other grea
 - **Let Down**
 - **Paranoid Android**
 
-## Data Source
+## data source
 
 the data for this project is sourced from Spotify's API. it includes information on each song's popularity, album, release date, and more.
 
