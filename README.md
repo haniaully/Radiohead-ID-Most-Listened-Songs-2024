@@ -1,5 +1,5 @@
 # Radiohead-ID-Most-Listened-Songs-2024
-most listened Radiohead songs in Spotify as of July 2024! :)
+✿ most listened Radiohead songs in Spotify as of July 2024! :)
 
 ✿ this repository contains a visualization of the most listened songs by Radiohead in Indonesia as of the year 2024. the purpose for all of these are for my personal-learning only.
 
@@ -7,15 +7,15 @@ most listened Radiohead songs in Spotify as of July 2024! :)
 
 ![Visualization](https://github.com/haniaully/Radiohead-ID-Most-Listened-Songs-2024/blob/4faf7a3fd9f248d1bab7e2ae53ce52ff38c4e7a0/Radiohead%20ID%202024.png)
 
-## steps to recreate this project
-
-### Prerequisites
+## prerequisites
 
 - Python 3.x
 - pandas library
 - requests library
 - Spotify Developer Account
 - Tableau Public
+  
+## steps to recreate this project
   
 ### step 1: Spotify API access
 
@@ -54,7 +54,7 @@ most listened Radiohead songs in Spotify as of July 2024! :)
 
 2. replace _'your_client_id'_ and _'your_client_secret'_ with your actual Spotify API credentials.
 3. save the file with a .py extension. for example: get_spotify_token.py.
-4. Run the script by selecting Run > Run Module. --- END-TO-END, I'M USING TERMINAL. :)
+4. run the script by selecting Run > Run Module. --- END-TO-END, I'M USING TERMINAL. :)
 5. copy the **access token** from the output.
 
 ### step 2: fetch data from Spotify API for Indonesian market
@@ -64,10 +64,10 @@ most listened Radiohead songs in Spotify as of July 2024! :)
    ```python
    import requests
 
-   # Replace with your actual access token
+   # replace with your actual access token
    access_token = 'your_access_token'
 
-   # Get Radiohead's ID
+   # get Radiohead's ID
    search_url = 'https://api.spotify.com/v1/search'
    search_headers = {
       'Authorization': 'Bearer ' + access_token,
@@ -87,16 +87,16 @@ most listened Radiohead songs in Spotify as of July 2024! :)
 5. note down the **radiohead_id** from the output.
 
 #### a. get Radiohead's Spotify ID
-1. Get Top Tracks in Indonesia
+1. get top tracks in Indonesia
    ```python
    import requests
    import pandas as pd
 
-   # Replace with your actual access token
+   # replace with your actual access token
    access_token = 'your_access_token'
    radiohead_id = 'your_radiohead_id'
 
-   # Get top tracks in Indonesia
+   # get top tracks in Indonesia
    tracks_url = f'https://api.spotify.com/v1/artists/{radiohead_id}/top-tracks'
    tracks_headers = {
       'Authorization': 'Bearer ' + access_token,
@@ -108,7 +108,7 @@ most listened Radiohead songs in Spotify as of July 2024! :)
    response = requests.get(tracks_url, headers=tracks_headers, params=tracks_params)
    tracks_data = response.json()['tracks']
 
-   # Extract relevant data
+   # extract relevant data
    tracks_list = []
    for track in tracks_data:
       track_info = {
@@ -118,7 +118,7 @@ most listened Radiohead songs in Spotify as of July 2024! :)
       }
       tracks_list.append(track_info)
 
-   # Create a DataFrame and save as CSV
+   # create a DataFrame and save as CSV
    tracks_df = pd.DataFrame(tracks_list)
    tracks_df.to_csv('radiohead_tracks_indonesia.csv', index=False)
    print("Data saved to 'radiohead_tracks_indonesia.csv'")
@@ -128,7 +128,7 @@ most listened Radiohead songs in Spotify as of July 2024! :)
 4. run the script by selecting Run > Run Module.
 5. verify the CSV file radiohead_tracks_indonesia.csv is created in the directory where you saved the script.
 
-### step 3: Tableau Visualization
+### step 3: Tableau visualization
 1. open Tableau Public.
 2. import the CSV file:
      - go to File > Open and select the radiohead_tracks_indonesia.csv file.
